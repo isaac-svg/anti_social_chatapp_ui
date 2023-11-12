@@ -12,7 +12,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath , userId}) => {
   const navigate = useNavigate();
   // const { _id,picturePath } = useSelector((state) => state.user);
   const user = useSelector((state) => {
-    console.log(state)
+    // console.log(state)
    return state.user});
 console.log(user)
   const token = useSelector((state) => state.token);

@@ -9,17 +9,17 @@ function prepareFile(file){
 
    reader.onload  = ()=>{
         base64File += reader.result
-        console.log(reader.result)
+        // console.log(reader.result)
     }
 
     reader.onerror = () =>{
         alert()
     }
-console.log(base64File, "ddkl")
+// console.log(base64File, "ddkl")
     return base64File
 }
 export const uploadToCloud = async (file)=>{
-    console.log(file)
+    // console.log(file)
     // const image = prepareFile(file)
   // console.log(image)
     const data = new FormData();
@@ -31,7 +31,7 @@ export const uploadToCloud = async (file)=>{
 
     data.append("cloud_name", import.meta.env.VITE_CLOUDINARY_CLOUD_NAME);
     data.append("folder", "media");
-      console.log(data)
+      // console.log(data)
     try {
         const response = await fetch(
           `${import.meta.env.VITE_CLOUDINARY_URL}`,

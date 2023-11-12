@@ -62,7 +62,7 @@ const Form = () => {
     const formData = new FormData();
     for (let value in values) {
       formData.append(value, values[value]);
-      console.log(value)
+      // console.log(value)
     }
     const imagedata = await uploadToCloud(values.picture)
     if (!imagedata?.secure_url){
@@ -93,7 +93,7 @@ const Form = () => {
       body: JSON.stringify(values),
     });
     const loggedIn = await loggedInResponse.json();
-    console.log(loggedIn)
+    // console.log(loggedIn)
     onSubmitProps.resetForm();
     if (loggedIn) {
       dispatch(
