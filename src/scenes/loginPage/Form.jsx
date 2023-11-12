@@ -64,7 +64,12 @@ const Form = () => {
       formData.append(value, values[value]);
       console.log(value)
     }
-    formData.append("picturePath", (await uploadToCloud(values.picture)).secure_url);
+    const imagedata = await uploadToCloud(values.picture)
+    if (!imagedata?.secure_url){
+      alert("Upload failed check your conection")
+      return 
+    }
+    formData.append("picturePath", (imagedata)?.secure_url);
 
     const savedUserResponse = await fetch(
       `${BaseURL}/auth/register`,

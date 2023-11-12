@@ -46,7 +46,12 @@ const MyPostWidget = ({ picturePath }) => {
     console.log(await uploadToCloud(image))
     if (image) {
       formData.append("picture", image);
-      formData.append("picturePath", (await uploadToCloud(image)).secure_url);
+      const imagedata = await uploadToCloud(values.picture)
+    if (!imagedata?.secure_url){
+      alert("Upload failed check your conection")
+      return 
+    }
+      formData.append("picturePath", imagedata.secure_url);
     }
 
     const response = await fetch(`${BaseURL}/posts`, {
