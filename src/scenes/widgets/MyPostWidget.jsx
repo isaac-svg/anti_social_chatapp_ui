@@ -43,10 +43,11 @@ const MyPostWidget = ({ picturePath }) => {
     const formData = new FormData();
     formData.append("userId", _id);
     formData.append("description", post);
-    console.log(await uploadToCloud(image))
+    // console.log(await uploadToCloud(image))
     if (image) {
+      const imagedata = await uploadToCloud(image)
+
       formData.append("picture", image);
-      const imagedata = await uploadToCloud(values.picture)
     if (!imagedata?.secure_url){
       alert("Upload failed check your conection")
       return 
