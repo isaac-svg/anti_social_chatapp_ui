@@ -14,7 +14,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath , userId}) => {
   const user = useSelector((state) => {
     // console.log(state)
    return state.user});
-console.log(user)
+    // console.log(user)
   const token = useSelector((state) => state.token);
   const friends = useSelector((state) => state.user.friends);
 
