@@ -7,7 +7,7 @@ import FlexBetween from "./FlexBetween";
 import UserImage from "./UserImage";
 import { BaseURL } from "../resource";
 
-const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
+const Friend = ({ friendId, name, subtitle, userPicturePath , userId}) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   // const { _id,picturePath } = useSelector((state) => state.user);
@@ -28,7 +28,7 @@ console.log(user)
 
   const patchFriend = async () => {
     const response = await fetch(
-      `${BaseURL}/users/${_id}/${friendId}`,
+      `${BaseURL}/users/${userId}/${friendId}`,
       {
         method: "PATCH",
         headers: {
